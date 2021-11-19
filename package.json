@@ -1,0 +1,37 @@
+{
+   "name": "projecttwo",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start:dev": "nodemon src/index.ts",
+      "start": "ts-node src/index.ts",
+      "typeorm": "node --require ts-node/register node_modules\\typeorm\\cli.js --config",
+      "migration": "ts-node ./node_modules/typeorm/cli.js typeorm:migration -n"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/express": "^4.17.13",
+      "@types/node": "^8.0.29",
+      "ts-node": "3.3.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/jsonwebtoken": "^8.5.6",
+      "@types/morgan": "^1.9.3",
+      "bcrypt": "^5.0.1",
+      "class-validator": "^0.13.1",
+      "dotenv": "^10.0.0",
+      "es6-shim": "^0.35.6",
+      "express": "^4.17.1",
+      "joi-typescript-validator": "^0.1.8",
+      "jsonwebtoken": "^8.5.1",
+      "morgan": "^1.10.0",
+      "pg": "^8.4.0",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.40"
+   }
+}
