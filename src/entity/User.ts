@@ -19,7 +19,7 @@ export class User extends BaseEntity {
     @IsEmail()
     email: string;
 
-    @Column({ nullable: false, select: false })
+    @Column({ nullable: false })
     @Min(8)
     password: string;
 
@@ -27,5 +27,7 @@ export class User extends BaseEntity {
     async hashPassword() {
         this.password = await bcrypt.hash(this.password, 12)
     }
+
+
 
 }
