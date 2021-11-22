@@ -1,10 +1,16 @@
 import { Contains, IsEmail, Min } from "class-validator";
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, BeforeInsert } from "typeorm";
 import bcrypt from "bcrypt"
+import crypto from "crypto"
 // import { Email, Min, Required } from "joi-typescript-validator"
 
 
 
+
+enum UserRole {
+    ADMIN = "admin",
+    USER = "users"
+}
 @Entity()
 export class User extends BaseEntity {
 
@@ -23,10 +29,20 @@ export class User extends BaseEntity {
     @Min(8)
     password: string;
 
-    @BeforeInsert()
-    async hashPassword() {
-        this.password = await bcrypt.hash(this.password, 12)
-    }
+    @Column({ type: "enum", enum: UserRole, default: UserRole.USER })
+    role: UserRole
+
+    @Column({ nullable: true })
+    passwordChangeAt: Date
+
+    @Column({ nullable: true })
+    passwordResetToken: string
+
+    @Column({ nullable: true })
+    passwordResetExpires: Date
+
+
+
 
 
 

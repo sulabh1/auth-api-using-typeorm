@@ -13,8 +13,7 @@ const globalErr = (err: Errors, req: Request, res: Response, next: NextFunction)
         res.status(err.statusCode).json({
             status: err.status,
             message: err.message,
-            stack: err.stack,
-            err
+            error: err
         })
     } else if (process.env.NODE_ENV === "production") {
         //doesnot leak the error in production
