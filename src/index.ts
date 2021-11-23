@@ -4,6 +4,7 @@ import { createConnection } from "typeorm";
 import dotenv from "dotenv"
 
 dotenv.config({ path: "../.env" })
+import { logger } from "./providers/logger";
 import app from "./app"
 
 
@@ -11,7 +12,7 @@ import app from "./app"
 const port = 4000 || process.env.PORT
 createConnection().then(async connection => {
     app.listen(port, () => {
-        console.log(`listening to the port ${port}`)
+        logger.log("info", `listening to the port http://${"localhost"}:${port}`)
     })
-    console.log("database connected")
+    logger.log("info", "database connected")
 }).catch(error => console.log(error));
