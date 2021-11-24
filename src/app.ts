@@ -5,6 +5,7 @@ import morgan from "morgan"
 import AppError from "./providers/AppError"
 import globalErr from "./providers/errorProvider"
 import userRoutes from "./routes/userRoutes"
+import productRoutes from "./routes/productRoutes"
 
 const app = express()
 
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV !== "production") { app.use(morgan("dev")) }
 
 app.use(express.json())
 app.use("/api/v1/users", userRoutes)
+app.use("/api/v1/products", productRoutes)
 
 app.all("*", (req, res, next) => {
     next(new AppError(`Can't find this url ${req.originalUrl} on this server`, 404))

@@ -1,8 +1,6 @@
 import { Contains, IsEmail, Min } from "class-validator";
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, BeforeInsert } from "typeorm";
-import bcrypt from "bcrypt"
-import crypto from "crypto"
-// import { Email, Min, Required } from "joi-typescript-validator"
+
 
 
 
@@ -40,10 +38,4 @@ export class User extends BaseEntity {
 
     @Column({ nullable: true })
     passwordResetExpires: Date
-
-
-
-
-
-
 }
