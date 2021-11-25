@@ -4,7 +4,7 @@ import { createConnection } from "typeorm";
 import dotenv from "dotenv"
 
 dotenv.config({ path: "../.env" })
-import { logger } from "./providers/logger";
+import logger from "./providers/logger";
 import app from "./app"
 
 
