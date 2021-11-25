@@ -14,7 +14,7 @@ const alignColorAndTime = format.combine(
         info => `${info.label} ${info.timestamp} ${info.level} : ${info.message}`
     )
 )
-export const logger = createLogger({
+const logger = createLogger({
     transports: [new transports.Console({ //can use file instead of console but there should be filename property
         //filename: "info.log",// only use this if there is  file instead of console
         level: "info",
@@ -22,3 +22,4 @@ export const logger = createLogger({
 
     })]
 })
+export default logger

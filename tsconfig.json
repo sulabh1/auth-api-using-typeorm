@@ -1,18 +1,14 @@
 {
-   "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6",
-         "esnext.asynciterable"
-      ],
-      "target": "es2015",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "./build",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "sourceMap": true,
-      "esModuleInterop":true,
-      "allowJs":true
-   }
+  "compilerOptions": {
+    "lib": ["es5", "es6", "esnext.asynciterable"],
+    "target": "ES5",
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowJs": true
+  }
 }
